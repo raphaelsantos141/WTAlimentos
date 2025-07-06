@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo | WT Alimentos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="/media/logo/logo.png" alt="WT Alimentos Logo" />
+      </div>
+    </div>
+  </header>
+
+  <section class="filter-bar">
+    <label for="filter">Escolha a categoria:</label>
+    <select id="filter">
+      <option value="all">Todas</option>
+      <option value="higiene">Higiene</option>
+      <option value="alimentos">Alimentos</option>
+      <option value="automotivo">Automotivo</option>
+      <option value="embalagem">Embalagem</option>
+      <!-- Adicione novas categorias aqui -->
+    </select>
+  </section>
+
+  <main>
+    <div id="gallery" class="gallery"></div>
+    <div id="pagination" class="pagination"></div>
+  </main>
+
+  <!-- Modal para imagem ampliada -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Imagem ampliada" />
+    <div id="caption"></div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-info">
+        <h1>WT Alimentos</h1>
+        <p><strong>Faturamento:</strong> (11) 93505-9808</p>
+        <p><strong>Financeiro:</strong> (11) 93505-9559</p>
+        <p><strong>Escritório:</strong> (11) 4352-3570</p>
+        <p><strong>Facebook e Instagram:</strong> @wtalimentos</a></p>
+        <p><strong>Site:</strong> <a href="https://www.wtalimentos.com" target="_blank">www.wtalimentos.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Criado com <span style="color: #f7b2b3;">&hearts;</span> por 
+      <a href="https://instagram.com/raphael.adesign" target="_blank" rel="noopener">@raphael.adesign</a>
+    </div>
+  </footer>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

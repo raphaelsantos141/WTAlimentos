@@ -1,0 +1,330 @@
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header vermelho com logo e título alinhados */
+header {
+  background: rgb(182, 27, 33);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.header-logo {
+  height: 60px;            /* ajuste como preferir */
+  width: auto;
+  /* deixa o logo branco mesmo se a arte original for colorida */
+  filter: brightness(0) invert(1);
+  /* se já tiver versão branca, remova a linha acima */
+}
+
+.header-logo img {
+  height: 50px;
+  width: auto;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+/* Filtro */
+.filter-bar {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.filter-bar label {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+.filter-bar select {
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card de produto */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  max-width: 240px;
+  height: 380px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.card p {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Vazio */
+.gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  overflow-x: visible;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.pagination button {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+.pagination button:hover {
+  background: #eee;
+}
+
+.pagination button.active {
+  background: rgb(182, 27, 33);
+  color: white;
+  border-color: rgb(109, 17, 20);
+}
+
+.pagination button[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Modal para imagem ampliada */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+}
+
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
+  max-width: 90%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+/* Footer discreto */
+footer {
+  background: rgb(182, 27, 33);
+  color: #f7b2b3;
+  padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+footer a {
+  color: #f7b2b3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  color: #f7b2b3;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.footer-info p {
+  margin: 0.25rem 0;
+}
+
+.footer-info a {
+  color: #f7b2b3;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #9e1d21;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #f7b2b3;
+  text-align: center;
+}
+
+
+/* ---------- RESPONSIVIDADE REFORÇADA ---------- */
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .filter-bar label {
+    display: inline-block !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+  }
+
+  .filter-bar select {
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem;
+    min-width: 220px;
+  }
+
+  .pagination button {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 0;
+  }
+
+  .header-logo {
+    height: 80px;        /* aumenta no tablet e celular grande */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .filter-bar label {
+    display: inline-block !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+  }
+
+  .filter-bar select {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.8rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .pagination button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+    border-radius: 12px;
+  }
+
+  .header-logo {
+    height: 90px;        /* ainda maior nos menores */
+  }
+}
